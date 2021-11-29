@@ -1,0 +1,39 @@
+Problem-Solving Design Test : proccesing time to complete project is 30 minutes.
+
+1. You are about to implement the buoyancy effect for a special car type, which can move freely above the water level. How can you solve that problem using PhysicsX?
+
+Answer : (physics.gravity) on the car and then we create waves in the water using the formula (1,0,1) Mathf.Sin(). because it uses a rigid body
+then the car will have a buoyancy effect...then we can use a meshfilter on the plane (water) to meshfilter following up and down waves.
+
+2. You are about to implement the collection system, which handles 3 things : allows the designer to manually place tokens around the map, allows the player to collect
+those tokens by colliding with them, and allows the player to unlock new character skins / vehicle skins / etc when collecting enough tokens. How do you design that system, 
+in such a way that least-dependant on other gameplay elements, because our current codebase is quite chaotic.
+
+Answer : for point 1, which is manually placing tokens around the map, we can make each user a different location for the token. we can use a (random range) at several points 
+but with the same amount of token value (not valid for playing together(mabar)) this will reduce collisions between users. later we can add (fuel) to each user such as 
+(need for speed no limit) limiting user activities to 8 activities per day. when doing 1 trip the (fuel) is reduced by 1 and before 1 hour the fuel will add (1) again, 
+so that if at one time the user spends his fuel if he wants to play again he can buy it with money at the shop or wait / 1 hour to get 1 fuel
+
+3.The game uses PUN, each player updates his location to others. There is a reported exploit that allows cheaters to cheat by using Cheat Engine to speed up the game. 
+How is that possible ? And what can you do to minimize impacts from that exploit?
+
+Answer : maybe we give a condition if the time in the application is not the same as the time server because it was accelerated earlier then the game crashes 
+or there is a cheating notification
+
+You are about to design the synchronization mechanism for the game. Each player controls a vehicle, which needs to sync properties below. How do you synchronize those properties?
+• Position of the vehicle
+• Rotation of the vehicle.
+• Wiper State: 3 state - on , low, high
+• Rear light State: 3 state: off , on , blink
+• Sidelight State: 4 state: off, on , blink-slow, blink-fast
+• Horn: player can press and release the horn button, to start and end the horn sound ( he sound continuously plays when player holds the button)
+
+Answer : maybe we can use playerpref to set data such as the position of the rear light on off, on or blink, etc. 
+and we can get the data when the user log in or certain conditions where we can set it like the save button.
+
+
+
+
+
+
+
